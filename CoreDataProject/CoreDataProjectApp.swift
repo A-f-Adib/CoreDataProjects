@@ -8,10 +8,21 @@
 import SwiftUI
 
 @main
+
 struct CoreDataProjectApp: App {
+    
+    @StateObject private var dataController = DataController()
+   
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          
+//            FilterView()
+//            ContentView()
+//            ContentViewTwo()
+            ContentViewThree()
+                .environment(\.managedObjectContext,dataController.container.viewContext)
+      
         }
     }
 }
